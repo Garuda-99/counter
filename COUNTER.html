@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <style>
+            #disp{
+                width:300px;
+                height:100px;
+                border:2px dashed black;
+                margin-left: 450px;
+                text-align: center;
+                color:brown;
+                font-size: 70px;
+                max-width: 1000px;
+                min-width: 100px;
+            }
+            button{
+                padding:20px;
+                background-color: rgb(13, 201, 207);
+                color:rgb(234, 16, 150);
+                margin-left: 150px;
+                margin-bottom: 30px;
+                box-shadow: 2px 2px 2px black;
+
+            }
+            button:active{
+                transform:translateY(2px);
+                box-shadow: none;
+            }
+            #divbutton{
+                display:grid;
+                grid-template-columns: repeat(4,0.1fr);
+            }
+            #savediv{
+                position:relative;
+                top:30px;
+                margin:10px;
+                color:rgb(240, 167, 9);
+                font-size: 30px;
+                font-family: monospace;
+                margin-left: 60px;
+            }
+            article{
+                font-size: 30px;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                color:chocolate;
+                margin-top: 100px;
+            }
+            article:hover{
+                color:burlywood;
+                text-shadow: 2px 2px 2px black;
+            }
+            #time{
+                position: absolute;
+                margin-top: 70px;
+                color:bisque;
+                background-color: brown;
+            }
+            iframe{
+                position: relative;
+                top:200px;
+                left:100px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="divbutton">
+        <button onclick="inc()">INCREMENT</button>
+        <button onclick="dec()">DECREMENT</button>
+        <button onclick="reset()">RESET</button>
+        <button onclick="save()">SAVE</button>
+        </div>
+        <div id="disp">0
+        </div>
+        <article>SAVED COUNT:</article>
+        <div id="savediv"></div>
+        <form action=""><button onclick="timer()" id="time">TIMER</button></form>
+        <iframe></iframe>
+        <script>
+            let j=document.getElementById("disp");
+            let f=document.getElementById("savediv");
+            let i=0;
+            function inc(){
+                
+                i=i+1;
+                j.innerText=i;
+            }
+            function dec(){
+                i=i-1;
+                j.innerText=i;
+            }
+            function reset(){
+                j.innerText=0;
+                i=0;
+            }
+            function save(){
+
+                let c=0;
+                c=i
+                let z=c;
+                if(c==0){
+                    f.textContent+=z+"-";
+                }
+                else{
+                    f.textContent+=z+" - ";
+                }
+                c="";
+                z="";
+            }
+            function timer(){
+
+            }
+        </script>
+    </body>
+</html>
